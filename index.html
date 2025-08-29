@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحمد - مبرمج ومطور ويب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2D5F7D;
+            --secondary: #4FA3A5;
+            --accent: #F27D42;
+            --light: #F2F2F2;
+            --dark: #333333;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid var(--accent);
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary);
+        }
+        
+        .profile h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .profile h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        section {
+            padding: 50px 0;
+            background: white;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+            font-size: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .hobby-card {
+            background: white;
+            border: 2px solid var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .hobby-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .hobby-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .contact-card:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .contact-card:hover i {
+            color: white;
+        }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile h1 {
+                font-size: 2rem;
+            }
+            
+            .profile h2 {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>مرحباً بك في موقعي الشخصي</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="profile">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>أحمد</h1>
+            <h2>مطور ويب من سوريا</h2>
+        </section>
+
+        <section class="about">
+            <h2 class="section-title">نبذة عني</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>أنا أحمد، أبلغ من العمر 12 سنة وأعيش في سوريا. بدأت رحلتي في البرمجة منذ فترة قصيرة وأنا متحمس جداً لتطوير مهاراتي.</p>
+                    <p>بدأت بتعلم لغة Python والأمن السيبراني، ثم انتقلت إلى تطوير الويب وتعلمت Back-end باستخدام Node.js.</p>
+                    <p>أنا شغوف بالتعلم وأسعى دائماً لتطوير نفسي في مجال البرمجة وتكنولوجيا المعلومات.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2 class="section-title">مهاراتي التقنية</h2>
+            <div class="skills">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>الأمن السيبراني</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>تطوير الويب</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="hobbies">
+            <h2 class="section-title">هواياتي</h2>
+            <div class="hobbies">
+                <div class="hobby-card">
+                    <i class="fas fa-book"></i>
+                    <h3>قراءة روايات</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-mosque"></i>
+                    <h3>كتب دينية</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>كتب فلسفية</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>كتب جبرية</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-pen"></i>
+                    <h3>شعر</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-futbol"></i>
+                    <h3>التحليل الكروي</h3>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>البرمجة</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2 class="section-title">طرق التواصل معي</h2>
+            <div class="contact-links">
+                <a href="https://www.facebook.com/profile.php?id=61578611094509&mibextid=ZbWKwL" class="contact-card" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>https://www.facebook.com/profile.php?id=61578611094509</p>
+                </a>
+                <a href="https://www.instagram.com/0x.a.h?igsh=aDV0MDdjMGx4dTRl" class="contact-card" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>https://www.instagram.com/0x.a.h</p>
+                </a>
+                <a href="mailto:ahm148400@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>ahm148400@gmail.com</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 أحمد - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        // تأثيرات بسيطة عند التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillCards = document.querySelectorAll('.skill-card');
+            const hobbyCards = document.querySelectorAll('.hobby-card');
+            
+            // تأثير عشوائي للبطاقات
+            skillCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+            
+            hobbyCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease';
+                    card.style.opacity = '1';
+                }, 200 * index);
+            });
+            
+            // تأثير عند التمرير
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight - 100) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // تهيئة أولية للعناصر
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // تشغيل تأثير التمرير عند التحميل
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
