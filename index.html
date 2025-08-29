@@ -121,6 +121,22 @@
     </footer>
 
     <script>
+        let btn =document.querySelector('.button'); 
+
+let bodyBackgroundColor=(color)=>{
+  document.body.style.setProperty('background-color', color)
+}
+altContent = '🌕'
+btn.onclick = () =>{
+  if (document.body.style.backgroundColor === 'white') {
+    bodyBackgroundColor('black')
+    btn.textContent= altContent;
+  } else {
+    bodyBackgroundColor('white')
+    btn.textContent ='🌞'
+  }
+}
+
         // تأثيرات بسيطة عند التمرير
         document.addEventListener('DOMContentLoaded', function() {
             const skillCards = document.querySelectorAll('.skill-card');
