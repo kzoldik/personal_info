@@ -11,7 +11,7 @@
 <body>
     <header>
          <button class="button" style="position: absolute; top: 0;left: 0;background-color: grey;border-radius: 10px;padding: 10px;">
-    🌚
+    🌝
          </button>
         <div class="container">
             <h1>مرحباً بك في موقعي الشخصي</h1>
@@ -121,18 +121,18 @@
     </footer>
 <script>
     let btn =document.querySelector('.button'); 
-
+let backgroundColor = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);"
 let bodyBackgroundColor=(color)=>{
   document.body.style.setProperty('background-color', color)
 }
-altContent = "🌝"
+altContent = "🌚"
 btn.onclick = () =>{
-  if (document.body.style.backgroundColor === "var(--dark)") {
-    bodyBackgroundColor('var(--light)')
+  if (document.body.style.backgroundColor === backgroundColor) {
+    bodyBackgroundColor('linear-gradient(135deg, #0a0805 0%, #3c601d 100%);')
     btn.textContent= altContent;
   } else {
-    bodyBackgroundColor('var(--dark)')
-    btn.textContent ="🌚"
+    bodyBackgroundColor(backgroundColor)
+    btn.textContent ="🌝"
   }
 }
 
