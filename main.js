@@ -1,4 +1,4 @@
-black)"ck btn = document.querySelector(".button");
+let btn= document.querySelector(".button");
 
 let bodyBackgroundColor = color => {
     document.body.style.setProperty("background-color", color);
