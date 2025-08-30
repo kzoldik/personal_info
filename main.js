@@ -1,16 +1,16 @@
-let btn= document.querySelector(".button");
+let btn=document.querySelector("p")
 
 let bodyBackgroundColor = color => {
     document.body.style.setProperty("background-color", color);
 };
-altContent = "🌕";
+altContent = "🌝";
 btn.onclick = () => {
-    if (document.body.style.backgroundColor === "var(--light)") {
-        bodyBackgroundColor("var(--dark)");
+    if (document.body.style.backgroundColor === "var(--dark)") {
+        bodyBackgroundColor("var(--light)");
         btn.textContent = altContent;
     } else {
-        bodyBackgroundColor("var(--light)");
-        btn.textContent = "🌞";
+        bodyBackgroundColor("var(--dark)");
+        btn.textContent = "🌚";
     }
 };
 
