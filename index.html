@@ -123,11 +123,11 @@
     let btn =document.querySelector('.button'); 
 let backgroundColor = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
 let bodyBackgroundColor=(color)=>{
-  document.body.style.setProperty('background-color', color)
+  document.body.style.setProperty('background', color)
 }
 altContent = "🌚"
 btn.onclick = () =>{
-  if (document.body.style.backgroundColor === backgroundColor) {
+  if (document.body.style.background === backgroundColor) {
     bodyBackgroundColor('linear-gradient(135deg, #0a0805 0%, #3c601d 100%)')
     btn.textContent= altContent;
   } else {
