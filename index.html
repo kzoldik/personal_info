@@ -7,10 +7,44 @@
     <title>أحمد - مبرمج ومطور ويب</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* إضافة أنماط للوضع الليلي */
+        body.dark-mode {
+            background: linear-gradient(135deg, #0a0805 0%, #3c601d 100%);
+            color: #f2f2f2;
+        }
+        
+        body.dark-mode section {
+            background: #2a2a2a;
+            color: #f2f2f2;
+        }
+        
+        body.dark-mode .about-text {
+            background: #333;
+            color: #f2f2f2;
+        }
+        
+        body.dark-mode .hobby-card {
+            background: #333;
+            border-color: #4FA3A5;
+            color: #f2f2f2;
+        }
+        
+        body.dark-mode .contact-card {
+            background: #333;
+            color: #f2f2f2;
+        }
+        
+        body.dark-mode .profile h1,
+        body.dark-mode .section-title,
+        body.dark-mode .hobby-card i {
+            color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <header>
-         <button class="button" style="position: absolute; top: 10;left: 0;background-color: grey;border-radius: 50%;padding: 5px;">
+         <button class="theme-toggle" style="position: absolute; top: 10px; left: 10px; background-color: grey; border-radius: 50%; padding: 5px; border: none; cursor: pointer; font-size: 1.5rem;">
     🌝
          </button>
         <div class="container">
@@ -18,6 +52,7 @@
         </div>
     </header>
 
+    <!-- باقي المحتوى كما هو -->
     <div class="container">
         <section class="profile">
             <div class="profile-img">
@@ -120,71 +155,29 @@
         </div>
     </footer>
 <script>
-    let btn =document.querySelector('.button'); 
-    let backgroundColor = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
-    let bodyBackgroundColor=(Gradient) => {
-      document.body.style.background = Gradient
+    // كود تبديل الوضع الليلي والنهاري
+    const themeToggle = document.querySelector('.theme-toggle');
+    
+    // التحقق مما إذا كان هناك تفضيل محفوظ
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '🌚';
     }
-    altContent = "🌚"
-    btn.onclick = () =>{
-      if (document.body.style.background === backgroundColor) {
-        bodyBackgroundColor('linear-gradient(135deg, #0a0805 0%, #3c601d 100%)')
-        btn.textContent= altContent;
-      } else {
-        bodyBackgroundColor(backgroundColor)
-        btn.textContent ="🌝"
-      }
-    }
+    
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // حفظ التفضيل
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            themeToggle.textContent = '🌚';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeToggle.textContent = '🌝';
+        }
+    });
 
-        // تأثيرات بسيطة عند التمرير
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillCards = document.querySelectorAll('.skill-card');
-            const hobbyCards = document.querySelectorAll('.hobby-card');
-            
-            // تأثير عشوائي للبطاقات
-            skillCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100);
-            });
-            
-            hobbyCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease';
-                    card.style.opacity = '1';
-                }, 200 * index);
-            });
-            
-            // تأثير عند التمرير
-            window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('section');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (sectionTop < windowHeight - 100) {
-                        section.style.opacity = '1';
-                        section.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-            
-            // تهيئة أولية للعناصر
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            // تشغيل تأثير التمرير عند التحميل
-            window.dispatchEvent(new Event('scroll'));
-        });
 </script>
 </body>
-</html>
+                                   </html>
