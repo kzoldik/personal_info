@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-         <button class="button" style="position: absolute; top: 10;left: 0;background-color: grey;border-radius: 10px;padding: 5px;">
+         <button class="button" style="position: absolute; top: 10;left: 0;background-color: grey;border-radius: 50%;padding: 5px;">
     🌝
          </button>
         <div class="container">
@@ -121,20 +121,20 @@
     </footer>
 <script>
     let btn =document.querySelector('.button'); 
-let backgroundColor = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
-let bodyBackgroundColor=(Gradient) => {
-  document.body.style.background = Gradient
-}
-altContent = "🌚"
-btn.onclick = () =>{
-  if (document.body.style.background === backgroundColor) {
-    bodyBackgroundColor('linear-gradient(135deg, #0a0805 0%, #3c601d 100%)')
-    btn.textContent= altContent;
-  } else {
-    bodyBackgroundColor(backgroundColor)
-    btn.textContent ="🌝"
-  }
-}
+    let backgroundColor = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
+    let bodyBackgroundColor=(Gradient) => {
+      document.body.style.background = Gradient
+    }
+    altContent = "🌚"
+    btn.onclick = () =>{
+      if (document.body.style.background === backgroundColor) {
+        bodyBackgroundColor('linear-gradient(135deg, #0a0805 0%, #3c601d 100%)')
+        btn.textContent= altContent;
+      } else {
+        bodyBackgroundColor(backgroundColor)
+        btn.textContent ="🌝"
+      }
+    }
 
         // تأثيرات بسيطة عند التمرير
         document.addEventListener('DOMContentLoaded', function() {
