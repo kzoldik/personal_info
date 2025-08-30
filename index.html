@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+btnOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <link rel="icon" href="png-clipart-man-using-computer-web-development-mobile-app-development-software-developer-web-developer-programmer-developer-web-design-expert-thumbnail.png">
@@ -156,7 +156,7 @@
 <script>
     
     const themeToggle = document.querySelector('.theme-toggle');
-    
+    const btnTop = document.querySelector('.btn')
     
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -178,12 +178,12 @@
     });
     window.onscroll = ()=> {
         if(window.scrollY>=600){
-            button.style.display= 'block'
+            btnTop.style.display= 'block';
         } else{
-            button.style.display= 'none'
+            btnTop.style.display = 'none';
         }
     }
-    button.onclick = () => {
+  btnTop.onclick = () => {
         window.scrollTo({
             left:0,
             top: 0,
