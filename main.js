@@ -1,11 +1,11 @@
-let btn = document.querySelector(".button");
+black)"ck btn = document.querySelector(".button");
 
 let bodyBackgroundColor = color => {
     document.body.style.setProperty("background-color", color);
 };
 altContent = "🌕";
 btn.onclick = () => {
-    if (document.body.style.backgroundColor === "var(--black)") {
+    if (document.body.style.backgroundColor === "var(--light)") {
         bodyBackgroundColor("var(--dark)");
         btn.textContent = altContent;
     } else {
